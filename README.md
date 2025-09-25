@@ -147,3 +147,86 @@ php -S 127.0.0.1:8000
 ## 라이선스 및 기여
 학습·연구용 자료입니다. 재배포 시 출처 표기 바랍니다.
 이슈나 PR은 환영합니다. (PR 전에는 로컬에서 충분히 테스트해 주세요.)
+
+---
+---
+<a name="web-hacking-study"></a>
+# web-hacking-study (Web Hacking Study)
+
+> Personal study repository for web hacking  
+> From basic web architecture to frequently encountered vulnerabilities like XSS and SQLi — reproduced, analyzed, and patched locally.  
+> **Note:** An English version of this document is placed below the Korean original for convenience.
+
+---
+
+## Table of Contents
+- [Introduction](#introduction)  
+- [Learning Objectives](#learning-objectives)  
+- [Session Goals (Summary)](#session-goals-summary)  
+- [Local Lab Environment (Quick)](#local-lab-environment-quick)  
+  - [A. Example: Running Flask](#a-example-running-flask)  
+- [Repository Structure](#repository-structure)  
+- [Quick Start](#quick-start)  
+- [References](#references)  
+- [License & Contributing](#license-contributing)
+
+---
+
+## Introduction
+This is a personal repository I created to study web security.  
+It collects theory summaries, local practice code, repro scripts, screenshots, and reports in one place.
+
+> **Important:** Use this material for learning purposes only. Do not apply it to services owned by others without permission.
+
+---
+
+## Learning Objectives
+The goal is to understand how web applications work and to reproduce, analyze, and mitigate common vulnerabilities (XSS, SQLi) hands-on.  
+All exercises use a local environment (Flask / PHP + SQLite), and results will be documented for inclusion in a portfolio.
+
+**Key outcomes**
+- Understand HTTP request/response, cookies & sessions, and browser rendering.  
+- Identify where vulnerabilities arise in input-processing flows.  
+- Reproduce and defend against Reflected / Stored / DOM XSS and SQLi (Union, Boolean, Time-based) using proper mitigations (escaping, prepared statements, etc.).  
+- Build small vulnerable apps locally and document repro scripts, patch code, and reports.
+
+---
+
+## Session Goals (Summary)
+- **Session 1 — Basics & XSS**
+  - Review web architecture and parameter handling; practice GET/POST with Flask.  
+  - Basics of JavaScript/DOM; reproduce Reflected / Stored / DOM XSS and apply mitigations.  
+  - Deliverables: repro code · payload list · before/after screenshots
+
+- **Session 2 — Server-side & SQL**
+  - Practice PHP form handling and simple CRUD; understand SQL structure.  
+  - Reproduce different SQLi types (Union / Boolean / Time-based) and analyze impact.  
+  - Deliverables: repro scripts · safe query examples · impact summary
+
+- **Session 3 — Integrated Practice & Documentation**
+  - Run chained scenarios (e.g., XSS → session theft → authorization flow).  
+  - Use browser tools and logs for detection/analysis; produce final report.  
+  - Deliverables: integrated report (`docs/report_session3.md`), checklists, etc.
+
+**Safety rule:** All exercises are performed on local (127.0.0.1) or isolated environments only.
+
+---
+
+## Local Lab Environment (Quick)
+
+### Minimum / Recommended
+- Python 3.8+ (Flask)  
+- PHP 7.0+  
+- SQLite (good for initial learning)  
+- git
+
+**Caution:** Never expose practice apps to the public internet.
+
+### A. Example: Running Flask
+1. Create & activate a virtual environment
+```bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
