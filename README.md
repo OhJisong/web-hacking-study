@@ -230,3 +230,71 @@ python -m venv .venv
 .venv\Scripts\activate
 # macOS / Linux
 source .venv/bin/activate
+```
+
+2. Install packages
+```bash
+pip install --upgrade pip
+pip install flask
+```
+
+3. Run the example
+```bash
+cd examples/session1/flask_xss_example
+python app.py
+# usually available at http://127.0.0.1:5000
+```
+
+---
+
+## Repository Structure
+```
+.
+├── README.md
+├── examples/
+│   ├── session1/
+│   │   └── flask_xss_example/        # Flask-based XSS practice (app.py, etc.)
+│   ├── session2/
+│   │   └── php_sqli_example/         # PHP + SQLite simple DB example
+│   └── session3/
+├── docs/                             # practice reports, screenshots
+└── scripts/                          # init/reset scripts (e.g., reset_db.sh)
+```
+
+---
+
+## Quick Start
+1. Clone
+```bash
+git clone https://github.com/<your-username>/web-hacking-study.git
+cd web-hacking-study
+```
+
+2. Run the Flask example
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install flask
+cd examples/session1/flask_xss_example
+python app.py
+```
+
+3. Run the PHP example
+```bash
+cd examples/session2/php_sqli_example
+php -S 127.0.0.1:8000
+```
+
+---
+
+## References
+- 생활코딩 — Web basics (for fundamentals)
+- MDN Web Docs — HTTP / DOM (official docs)
+- PortSwigger Web Security Academy — practice-focused (English)
+
+---
+
+## License & Contributing
+
+This repository is intended for study and research. Please attribute the source if you redistribute.
+Issues and PRs are welcome. (Please test locally before submitting PRs.)
